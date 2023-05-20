@@ -16,5 +16,7 @@ cloudflare D1 + Astro 2, git clone count CLI
 ***
 ### blog 
 
+https://zenn.dev/knaka0209/books/b25ece7df93925
+
 ***
 

@@ -33,12 +33,6 @@ node src/count_get.js
 ```
 
 
-
-***
-* start
-
-* http://localhost:3000/
-
 ***
 ### blog
 
