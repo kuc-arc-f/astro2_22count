@@ -1,4 +1,4 @@
-﻿# client
+﻿# client JS
 
  Version: 0.9.1
 
@@ -11,35 +11,28 @@
 ***
 ### Summary
 
-Astro 2 + API sample, client
+js client CLI, git clone count 
 
 ***
 ### setup
-* .env
-* PUBLIC_API_URL:
-* auth info: PUBLIC_BASIC_AUTH_USER, PUBLIC_BASIC_AUTH_PASSWORD
-
-```
-PUBLIC_BASIC_AUTH_USER = "hoge"
-PUBLIC_BASIC_AUTH_PASSWORD = "1111"
-
-PUBLIC_API_URL=http://localhost:8787
-```
-
-***
-### Start
 
 ```
 npm i
 
-#start-dev
-
-yarn  dev
-
-# build
-
-yarn build
 ```
+***
+### Count
+
+```
+# name add
+node src/name_get.js
+
+# count
+node src/count_get.js
+
+```
+
+
 
 ***
 * start
