@@ -133,8 +133,17 @@ console.log(req);
       let result: any = {};  
       if (req) {
         const sql = `
-        SELECT * FROM RepoCount
-        ORDER BY id DESC
+        SELECT 
+        RepoCount.id, 
+        RepoCount.count,
+        RepoCount.uniques,
+        RepoCount.repoId,
+        Repo.name as RepoName
+        FROM RepoCount
+        LEFT OUTER JOIN Repo 
+        ON Repo.id = RepoCount.repoId
+        ORDER BY RepoCount.count DESC
+        LIMIT 200;
         `;  
         resulte = await env.DB.prepare(sql).all();
         //console.log(resulte);
