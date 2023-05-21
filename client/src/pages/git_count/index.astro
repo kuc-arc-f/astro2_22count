@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CrudIndex from './CrudIndex';
+
+console.log("#index");
+const taskList = await CrudIndex.getList();
+console.log(taskList);
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="container">
+		<a href={`/`}>[ Top ]</a>
+		<hr />
+		<h1>Github Count</h1>
+		<hr />
+		<ul>
+		{
+		taskList.map((item) => (
+			<li><h3>{item.RepoName}</h3>
+				<p class="text-primary fs-5">Count: {item.count} , Uniques: {item.uniques}</p>
+				ID: {item.id}
+				<hr />
+			</li>
+		))
+		}
+		</ul>		
+	</main>
+</Layout>
+<!-- -->
+<style>
+</style>
+<!-- -->
+<script src="./CrudIndex.ts"></script>
+
+<!--
+
+ -->
