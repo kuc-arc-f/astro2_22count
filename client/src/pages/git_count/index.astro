@@ -2,9 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import CrudIndex from './CrudIndex';
 
+let count = 0;
 console.log("#index");
 const taskList = await CrudIndex.getList();
-console.log(taskList);
+//console.log(taskList);
+count = CrudIndex.getTotalCount(taskList)
+//console.log("count=",count);
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,6 +16,7 @@ console.log(taskList);
 		<a href={`/`}>[ Top ]</a>
 		<hr />
 		<h1>Github Count</h1>
+		<p>count= {count} clone</p>
 		<hr />
 		<ul>
 		{

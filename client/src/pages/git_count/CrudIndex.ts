@@ -4,6 +4,26 @@ import HttpCommon from '../../lib/HttpCommon';
 //
 const CrudIndex = {
   /**
+  *
+  * @param
+  *
+  * @return
+  */
+  getTotalCount : function (items: any[]): any  
+  {
+    try{
+      let retCount = 0;
+      items.forEach(item => {
+//        console.log("count= ", item.count);
+        retCount = retCount + item.count;
+      });
+      return retCount;
+    } catch (e) {
+      console.error(e);
+      throw new Error("Error, getTotalCount");
+    } 
+  }  ,  
+  /**
   * getList
   * @param
   *
@@ -16,7 +36,8 @@ const CrudIndex = {
 //console.log(json);      
       let items: any[] = [];
       items = json.data;
-//console.log(items);
+//      const c = this.getTotalCount(items)
+//console.log(d);
       return items;
     } catch (e) {
       console.error(e);
